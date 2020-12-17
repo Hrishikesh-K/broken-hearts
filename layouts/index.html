@@ -43,7 +43,7 @@
 					</a>
 				{{- end -}}
 				{{- if ge (sub $paginator.PageNumber 2) 2 -}}
-					<a class = "page-button skip-page" href = "{{- ($paginator.Prev).Prev.URL -}}" uk-tooltip = "Go to page {{ sub ($paginator.PageNumber) 2 }}">
+					<a href = "{{- ($paginator.Prev).Prev.URL -}}" class = "page-button skip-page" uk-tooltip = "Go to page {{ sub ($paginator.PageNumber) 2 }}">
 						<span>
 							{{- sub ($paginator.PageNumber) 2 -}}
 						</span>
@@ -54,7 +54,7 @@
 						</span>
 					</a>
 				{{- end -}}
-				<a class = "uk-position-z-index page-button current-page" uk-tooltip = "You're here">
+				<a href = "#" class = "uk-position-z-index page-button current-page" uk-tooltip = "You're here">
 					<span class = "uk-text-bold">
 						{{- $paginator.PageNumber -}}
 					</span>
@@ -65,7 +65,7 @@
 							...
 						</span>
 					</a>
-					<a class = "page-button skip-page" href = "{{- ($paginator.Next).Next.URL -}}" uk-tooltip = "Go to page {{ add ($paginator.PageNumber) 2 }}">
+					<a href = "{{- ($paginator.Next).Next.URL -}}" class = "page-button skip-page" uk-tooltip = "Go to page {{ add ($paginator.PageNumber) 2 }}">
 						<span>
 							{{- add ($paginator.PageNumber) 2 -}}
 						</span>
