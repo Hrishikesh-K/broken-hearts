@@ -1,4 +1,5 @@
 backend:
+  branch: main
   name: git-gateway
   repo: Hrishikesh-K/Broken-Hearts
 public_folder: 'images/'
