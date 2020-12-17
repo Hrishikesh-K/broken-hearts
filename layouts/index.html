@@ -1,0 +1,31 @@
+{{- define "main" -}}
+	<main class = "uk-padding-small">
+		<div class = "uk-grid uk-grid-small uk-child-width-1-2@s uk-child-width-1-3@l home-grid" data-uk-grid = "masonry: true" uk-scrollspy = "target: .uk-card; cls: uk-animation-slide-bottom-medium; delay: 250">
+			{{- $paginator := .Paginate (where .Site.RegularPages "Section" "blog") -}}
+			{{- range $paginator.Pages -}}
+				<div>
+					<div class = "uk-card uk-card-small">
+						<div class = "uk-card-body">
+							<h3 class = "uk-heading-small">
+								{{- .Params.Title -}}
+							</h3>
+							<p>
+								{{ .Params.Date.Format  "Jan 02, 2006" }} - Written by Ananya Mangwani
+							</p>
+							<div class = "uk-border-circle uk-margin-auto post-icon-background">
+								<img width = "150" height = "150" alt = "{{- .Params.Title -}}" src = "{{- (.Page.Resources.GetMatch `assets/icon.svg`).RelPermalink -}}">
+							</div>
+							<p class = "uk-text-large">
+								{{- .Params.Description -}}
+							</p>
+							<a href = "{{- .RelPermalink -}}" class = "uk-button uk-button-default">
+								Read more
+							</a>
+						</div>
+					</div>
+				</div>
+			{{- end -}}
+		</div>
+		{{- partial "pagination" . -}}
+	</main>
+{{- end -}}

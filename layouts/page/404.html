@@ -1,0 +1,19 @@
+{{- define "main" -}}
+	<div class = "uk-padding-small post">
+		<h3 class = "uk-heading-small uk-text-center">
+			Error 404: Not Found
+		</h3>
+		<p>
+			Sadly, the page you requested doesn't exist on the server. It might be moved, renamed, deleted or you might have got the wrong link. You can try:
+		</p>
+		<a href = "/search/" class = "uk-margin-auto uk-button uk-button-default uk-button-large error404-button">
+			Searching for the desired resource
+		</a>
+		<p class = "uk-text-center">
+			OR
+		</p>
+		<a href = "/" class = "uk-margin-auto uk-button uk-button-default uk-button-large error404-button">
+			Restarting from home
+		</a>
+	</div>
+{{- end -}}

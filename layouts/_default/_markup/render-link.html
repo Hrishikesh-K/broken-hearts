@@ -1,0 +1,20 @@
+<a class = "uk-link-text link" href = "{{- .Destination | safeURL -}}"
+	{{ with .Title }}
+		title = "{{- . -}}"
+	{{ end }}
+	{{ if strings.HasPrefix .Destination `http` }}
+		target = "_blank"
+		rel = "nofollow noopener noreferrer"
+	{{ end }}
+	{{ if strings.HasPrefix .Destination `#` }}
+		uk-scroll
+	{{ end }}>
+	<span>
+		{{- .Text | htmlUnescape -}}
+	</span>
+	{{- if strings.HasPrefix .Destination "http" -}}
+		<svg viewBox = "0 0 20 20" xmlns = "http://www.w3.org/2000/svg" width = "10" height = "10" class = "icon">
+			<path d = "M18.7 10H20v10H0V0h10v1.3H1.3v17.3h17.3V10zM13.3 0v1.3h4.3l-7.5 7.5 1 1 7.5-7.5v4.3H20V0h-6.7z"/>
+		</svg>
+	{{- end -}}
+</a>

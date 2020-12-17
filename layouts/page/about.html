@@ -1,0 +1,9 @@
+{{- define "main" -}}
+	<article class = "uk-padding-small uk-padding-remove-bottom post">
+		<h3 class = "uk-heading-small uk-text-center">
+			{{- .Params.Title -}}
+		</h3>
+		<img width = "350" height = "350" alt = "Ananya" class = "uk-border-circle" data-src = "assets/img1.jpg" uk-img>
+		{{- .Content -}}
+	</article>
+{{- end -}}

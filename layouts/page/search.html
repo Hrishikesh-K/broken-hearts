@@ -1,0 +1,22 @@
+{{- define "main" -}}
+	<div class = "uk-padding-small">
+		<h3 class = "uk-heading-small">
+			Search
+		</h3>
+		<form class = "search-form" autocomplete = "off" onsubmit = "return false">
+			<div class = "uk-inline">
+				<a class = "uk-form-icon uk-form-icon-flip search-button">
+					<svg viewBox = "0 0 20 20" xmlns = "http://www.w3.org/2000/svg" width = "20" height = "20" class = "icon">
+						<path d = "M20 19.1l-4.3-4.3c1.4-1.6 2.2-3.6 2.2-5.8 0-4.9-4-8.9-8.9-8.9S0 4 0 8.9s4 8.9 8.9 8.9c2.2 0 4.3-.8 5.8-2.2l4.3 4.3 1-.8zM8.9 16.5c-4.2 0-7.6-3.4-7.6-7.6s3.4-7.6 7.6-7.6 7.6 3.4 7.6 7.6-3.4 7.6-7.6 7.6z"/>
+					</svg>
+				</a>
+				<input class = "uk-input uk-form-width-large search-input" type = "search" placeholder = "Search query">
+			</div>
+		</form>
+		<div class = "search-results">
+			<p class = "errorP"></p>
+			<p class = "queryP"></p>
+			<ul class = "results-container"></ul>
+		</div>
+	</div>
+{{- end -}}

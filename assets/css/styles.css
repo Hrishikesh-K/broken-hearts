@@ -1,0 +1,382 @@
+@font-face {
+		font-family: 'Google Sans';
+		font-style: normal;
+		font-weight: 400;
+		src: url("/fonts/font01.woff2") format('woff2');
+		unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+		font-display: swap;
+	}
+@font-face {
+		font-family: 'Google Sans';
+		font-style: normal;
+		font-weight: 400;
+		src: url("/fonts/font02.woff2") format('woff2');
+		unicode-range: U+0370-03FF;
+		font-display: swap;
+	}
+@font-face {
+		font-family: 'Google Sans';
+		font-style: normal;
+		font-weight: 400;
+		src: url("/fonts/font03.woff2") format('woff2');
+		unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+		font-display: swap;
+	}
+@font-face {
+		font-family: 'Google Sans';
+		font-style: normal;
+		font-weight: 400;
+		src: url("/fonts/font04.woff2") format('woff2');
+		unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+		font-display: swap;
+	}
+@font-face {
+		font-family: 'Google Sans';
+		font-style: normal;
+		font-weight: 400;
+		src: url("/fonts/font05.woff2") format('woff2');
+		unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+		font-display: swap;
+	}
+@font-face {
+		font-family: 'Google Sans';
+		font-style: normal;
+		font-weight: 500;
+		src: url("/fonts/font06.woff2") format('woff2');
+		unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+		font-display: swap;
+	}
+@font-face {
+		font-family: 'Google Sans';
+		font-style: normal;
+		font-weight: 500;
+		src: url("/fonts/font07.woff2") format('woff2');
+		unicode-range: U+0370-03FF;
+		font-display: swap;
+	}
+@font-face {
+		font-family: 'Google Sans';
+		font-style: normal;
+		font-weight: 500;
+		src: url("/fonts/font08.woff2") format('woff2');
+		unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+		font-display: swap;
+	}
+@font-face {
+		font-family: 'Google Sans';
+		font-style: normal;
+		font-weight: 500;
+		src: url("/fonts/font09.woff2") format('woff2');
+		unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+		font-display: swap;
+	}
+@font-face {
+		font-family: 'Google Sans';
+		font-style: normal;
+		font-weight: 500;
+		src: url("/fonts/font10.woff2") format('woff2');
+		unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+		font-display: swap;
+	}
+@font-face {
+		font-family: 'Google Sans';
+		font-style: normal;
+		font-weight: 700;
+		src: url("/fonts/font11.woff2") format('woff2');
+		unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+		font-display: swap;
+	}
+@font-face {
+		font-family: 'Google Sans';
+		font-style: normal;
+		font-weight: 700;
+		src: url("/fonts/font12.woff2") format('woff2');
+		unicode-range: U+0370-03FF;
+		font-display: swap;
+	}
+@font-face {
+		font-family: 'Google Sans';
+		font-style: normal;
+		font-weight: 700;
+		src: url("/fonts/font13.woff2") format('woff2');
+		unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+		font-display: swap;
+	}
+@font-face {
+		font-family: 'Google Sans';
+		font-style: normal;
+		font-weight: 700;
+		src: url("/fonts/font14.woff2") format('woff2');
+		unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+		font-display: swap;
+	}
+@font-face {
+		font-family: 'Google Sans';
+		font-style: normal;
+		font-weight: 700;
+		src: url("/fonts/font15.woff2") format('woff2');
+		unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+		font-display: swap;
+	}
+.light-theme {
+	--text: 33, 33, 33;
+	--link: 3, 155, 229;
+	--surface: 238, 238, 238;
+	--background: 250, 250, 250;
+}
+.dark-theme {
+	--link: 79, 195, 247;
+	--text: 250, 250, 250;
+	--surface: 66, 66, 66;
+	--background: 33, 33, 33;
+}
+body {
+	min-height: 100vh;
+	background: rgb(var(--background));
+}
+h1, h2, h3, h4, h5, h6, p {
+	color: rgb(var(--text)) !important;
+	font-family: 'Google Sans', sans-serif !important;
+}
+blockquote {
+	padding: 15px 0 15px 15px;
+	border-left: 3px solid rgb(var(--text));
+}
+footer {
+	height: 39px;
+}
+footer p span:first-child {
+	font-family: 'Arial', sans-serif;
+}
+.uk-navbar, .uk-card, .uk-button-default {
+	background: rgb(var(--surface)) !important;
+}
+.uk-navbar {
+	border-bottom: 1px solid rgba(var(--text), 0.5);
+}
+.uk-navbar .uk-logo {
+	animation: heart 1s infinite;
+}
+.uk-navbar-dropdown {
+	background: rgb(var(--surface));
+	outline: 1px solid rgb(var(--text));
+}
+.uk-navbar-dropdown-nav li a, .uk-button-default {
+	color: rgb(var(--text)) !important;
+}
+.uk-card {
+	border: 1px solid rgba(var(--text), 0.5);
+}
+.uk-button-default {
+	border-color: rgb(var(--text)) !important;
+}
+.uk-input {
+	color: rgb(var(--text)) !important;
+	border-color: rgb(var(--text)) !important;
+	background: rgb(var(--surface)) !important;
+}
+[uk-img] {
+	display: block;
+	background-repeat: no-repeat;
+	background-size: 100px 100px;
+	background-position: center center;
+	background-image: url('/images/loading.svg');
+}
+.icon path {
+	fill: rgb(var(--text));
+}
+.main-content, footer {
+	max-width: 1200px;
+	background: rgb(var(--background));
+}
+.page-button, .scroll-button {
+	padding: 0;
+	width: 40px;
+	height: 40px;
+	background: rgb(var(--background));
+	border: 1px solid rgb(var(--text));
+}
+.page-button svg, .page-button span, .scroll-button svg {
+	top: 50%;
+	margin: auto;
+	display: block;
+	position: relative;
+	text-align: center;
+	color: rgb(var(--text));
+	transform: translateY(-50%);
+}
+.page-button {
+	text-decoration: none !important;
+}
+.page-button.current-page {
+	outline: 3px solid rgb(var(--text));
+}
+.post-icon-background {
+	width: 150px;
+	height: 150px;
+	box-shadow: 0 0 0 2.5px rgb(var(--text));
+}
+.post p {
+	font-size: 20px;
+}
+.post .link {
+	text-decoration: none !important;
+	color:rgb(var(--link)) !important;
+}
+.post .link svg {
+	margin-left: 2.5px;
+	transform: translateY(-5px);
+}
+.post img {
+	margin: auto;
+	display: block;
+}
+.post .uk-card img {
+	top: 50%;
+	left: 50%;
+	margin: 0;
+	position: relative;
+	transform: translate(-50%, -50%);
+}
+.search-card {
+	border: 1px solid rgb(var(--text));
+}
+.results-container {
+	padding: 0;
+}
+.error404-button {
+	width: 350px;
+	display: block;
+}
+.scroll-button {
+	right: 15px;
+	z-index: 10;
+	bottom: 15px;
+	position: fixed;
+	transform: scale(0);
+	transition: transform 0.3s;
+}
+.gt-container * {
+	font-family: 'Google Sans', sans-serif !important;
+}
+.gt-container .gt-link {
+	border-bottom: none;
+	color: inherit !important;
+}
+.gt-counts, .gt-user-name {
+	color: rgb(var(--text)) !important;
+}
+.gt-container .gt-meta {
+	border-color: rgb(var(--text));
+}
+.gt-container .gt-ico svg {
+	fill: rgb(var(--text)) !important;
+	transform: translateY(-5px);
+}
+.gt-container .gt-ico-github .gt-svg svg {
+	transform: translateY(0);
+}
+.gt-container .gt-popup {
+	top: 3em;
+	border-color: rgb(var(--text));
+	background: rgb(var(--surface));
+}
+.gt-container a, .gt-container a.is--active {
+	text-decoration: underline;
+	color: rgb(var(--text)) !important;
+}
+.gt-container .gt-popup .gt-action.is--active:before {
+	top: 0.75em;
+	background: rgb(var(--text));
+}
+.gt-copyright, .gt-container .gt-header-controls-tip, .gt-container .gt-comment-like {
+	display: none;
+}
+.gt-container .gt-header-textarea {
+	border-radius: 0;
+	min-height: 100px;
+	color: rgb(var(--text)) !important;
+	border-color: rgb(var(--text)) !important;
+	background: rgb(var(--surface)) !important;
+}
+.gt-container .gt-header-textarea::placeholder, .gt-container .gt-comment-text, .gt-container .gt-comment-date {
+	color: rgb(var(--text), 0.5);
+}
+.gt-container .gt-header-textarea:focus {
+	border-color: rgb(var(--primary));
+}
+.gt-container .gt-header-preview {
+	color: rgb(var(--text)) !important;
+	background: rgb(var(--surface)) !important;
+}
+.gt-container .gt-btn {
+	border: none;
+	padding: 0 30px;
+	border-radius: 0;
+	line-height: 38px;
+	font-size: 0.875em;
+	background: none !important;
+	border: 1px solid rgb(var(--text));
+	color: rgb(var(--text)) !important;
+}
+.gt-container .gt-btn-loading {
+	vertical-align: middle;
+}
+.gt-container .gt-spinner::before {
+	border-color: rgb(var(--text-on-primary));
+}
+.gt-container .gt-comment-content {
+	box-shadow: none !important;
+	background: rgb(var(--surface)) !important;
+	border: 1px solid rgb(var(--text)) !important;
+}
+.gt-container .gt-comment-username {
+	font-weight: bold;
+}
+.gt-container .gt-comment-body {
+	color: rgb(var(--text)) !important;
+}
+.markdown-body blockquote {
+	font-size: inherit;
+	padding: 0 0 0 10px;
+	color: rgb(var(--text));
+	margin: 10px 0 10px 20px;
+	border-left: 2.5px solid rgb(var(--text));
+}
+.markdown-body ul, .markdown-body ol {
+	padding-left: 20px;
+}
+.markdown-body .highlight pre, .markdown-body pre {
+	background: #fafafa;
+}
+@keyframes heart {
+	0% {
+		transform: scale(.75);
+	}
+
+	20% {
+		transform: scale(1);
+	}
+
+	40% {
+		transform: scale(.75);
+	}
+
+	60% {
+		transform: scale(1);
+	}
+
+	80% {
+		transform: scale(.75);
+	}
+
+	100% {
+		transform: scale(.75);
+	}
+}
+@media screen and (max-width: 640px) {
+
+	.site-title, 	.first-page, 	.last-page {
+		display: none !important;
+	}
+}

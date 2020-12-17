@@ -1,0 +1,25 @@
+backend:
+  name: git-gateway
+  repo: Hrishikesh-K/Broken-Hearts
+public_folder: 'images/'
+media_folder: 'static/images/'
+publish_mode: editorial_workflow
+site_url: https://brokenhearts.netlify.app
+display_url: https://brokenhearts.netlify.app
+collections:
+  - name: 'blog'
+    create: true
+    label: 'Blog'
+    label_singular: 'Post'
+    folder: 'content/blog'
+    path: '{{slug}}/index'
+    media_folder: 'assets/'
+    preview_path: '{{dirname}}'
+    sortable_fields: ['title', 'fields.date']
+    editor:
+      preview: true
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Date', name: 'date', widget: 'datetime' }
+      - { label: 'Description', name: 'description', widget: 'string' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }

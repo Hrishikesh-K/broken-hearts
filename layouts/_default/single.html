@@ -1,0 +1,33 @@
+{{- define "main" -}}
+	<article class = "uk-padding-small uk-padding-remove-bottom post">
+		<h3 class = "uk-heading-small uk-text-center">
+			{{- .Params.Title -}}
+		</h3>
+		<p class = "uk-text-center">
+			{{ .Params.Date.Format  "Jan 02, 2006" }} - Written by Ananya Mangwani
+		</p>
+		<div class = "uk-border-circle uk-margin-auto post-icon-background">
+			<img width = "150" height = "150" alt = "{{- .Params.Title -}}" src = "{{- (.Page.Resources.GetMatch `assets/icon.svg`).RelPermalink -}}">
+		</div>
+		{{- .Content -}}
+		<div class = "uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+			<div class = "uk-padding-small">
+				<img width = "200" height = "200" alt = "Ananya" class = "uk-border-circle" data-src = "/images/author.jpg" uk-img>
+			</div>
+			<div>
+				<div class = "uk-padding-small">
+					<h3 class = "uk-heading-small">
+						About the author
+					</h3>
+					<p>
+						I am Ananya Mangwani and I was born on August 20. I am all about my dogs, my camera and my music. I love creating, travelling and experimenting. I believe life is too short to be serious all the time, so if you cannot laugh at yourself... call me. I'll do it for you.
+					</p>
+				</div>
+			</div>
+		</div>
+	</article>
+	<div class = "uk-padding-small uk-padding-remove-top">
+		<div id = "comment-container">
+		</div>
+	</div>
+{{- end -}}

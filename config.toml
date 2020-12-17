@@ -1,0 +1,22 @@
+baseURL = "https://brokenhearts.netlify.app/"
+disableKinds = ["section", "taxonomy", "term"]
+enableRobotsTXT = true
+paginate = 6
+title = "Broken Hearts | Ananya Mangwani"
+
+[markup.goldmark.renderer]
+	unsafe = true
+
+[minify]
+	minifyOutput = true
+
+[outputs]
+	home = ["HTML", "JSON", "RSS"]
+
+[permalinks]
+	blog = "/:filename/"
+
+[server.headers]
+	for = "/js/sw.min.js"
+		[server.headers.values]
+			Service-Worker-Allowed = "/"

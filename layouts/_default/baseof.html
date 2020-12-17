@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		{{- if .IsHome -}}
+			{{- $paginator := .Paginate (where .Site.RegularPages "Section" "blog") -}}
+			{{- if eq $paginator.PageNumber 1 -}}
+				{{- .Scratch.Set "title" .Site.Title -}}
+			{{- else -}}
+				{{- .Scratch.Set "title" (printf "Page %v of %v :: %s" $paginator.PageNumber $paginator.TotalPages .Site.Title) -}}
+			{{- end -}}
+			{{- .Scratch.Set "description" "The blog for humans all over the world." -}}
+			{{- .Scratch.Set "og" (printf "%sassets/og.jpg" .Permalink) -}}
+			{{- .Scratch.Set "twitter" (printf "%sassets/twitter.jpg" .Permalink) -}}
+		{{- else -}}
+			{{- .Scratch.Set "title" (printf "%s :: %s" .Title .Site.Title) -}}
+			{{- if and .IsPage (eq .Section "blog") -}}
+				{{- .Scratch.Set "description" .Params.Description -}}
+				{{- .Scratch.Set "og" (printf "%sassets/og.jpg" .Permalink) -}}
+				{{- .Scratch.Set "twitter" (printf "%sassets/twitter.jpg" .Permalink) -}}
+			{{- else -}}
+				{{- .Scratch.Set "description" "The blog for humans all over the world." -}}
+				{{- .Scratch.Set "og" (printf "%simages/og.jpg" .Site.BaseURL) -}}
+				{{- .Scratch.Set "twitter" (printf "%simages/twitter.jpg" .Site.BaseURL) -}}
+			{{- end -}}
+		{{- end -}}
+		<meta charset = "utf-8">
+		{{- if or (eq .Params.Layout "admin") (eq .Params.Layout "404") -}}
+			<meta name = "robots" content = "noindex">
+		{{- end -}}
+		<meta http-equiv = "X-UA-Compatible" content = "IE = edge">
+		<meta name = "author" content = "Ananya Mangwani">
+		<meta name = "application-name" content = "Broken Hearts">
+		<meta name = "generator" content = "Hugo {{ hugo.Version }}">
+		<meta name = "title" content = "{{- .Scratch.Get `title` -}}">
+		<meta name = "apple-mobile-web-app-title" content = "Broken Hearts">
+		<meta name = "description" content = "{{- .Scratch.Get `description` -}}">
+		<meta name = "viewport" content = "user-scalable = yes, initial-scale = 1, viewport-fit = cover, width = device-width, height = device-height">
+		<meta name = "keywords" content = "Ananya Mangwani, Ananya, Mangwani, Broken Hearts, Broken, Hearts, Blog, Love, Friends, Troubles, Pain, Anger, Jealousy, Emotions">
+		<meta property = "og:type" content = "website">
+		<meta property = "og:locale" content = "en_IN">
+		<meta property = "og:image:width" content = "1200">
+		<meta property = "og:image:height" content = "638">
+		<meta property = "og:image:type" content = "image/jpeg">
+		<meta property = "og:url" content = "{{- .Permalink -}}">
+		<meta property = "og:image" content = "{{- .Scratch.Get `og` -}}">
+		<meta property = "og:title" content = "{{- .Scratch.Get `title` -}}">
+		<meta property = "og:description" content = "{{- .Scratch.Get `description` -}}">
+		<meta property = "twitter:card" content = "summary_large_image">
+		<meta property = "twitter:url" content = "{{- .Site.BaseURL -}}">
+		<meta property = "twitter:title" content = "{{- .Scratch.Get `title` -}}">
+		<meta property = "twitter:image" content = "{{- .Scratch.Get `twitter` -}}">
+		<meta property = "twitter:image:alt" content = "{{- .Scratch.Get `title` -}}">
+		<meta property = "twitter:description" content = "{{- .Scratch.Get `description` -}}">
+		<title>{{- .Scratch.Get "title" -}}</title>
+		{{- if eq .Params.Layout "admin" -}}
+			<link href = "{{- (resources.GetMatch `/yml/netlify-cms-config.yml`).RelPermalink -}}" type = "text/yaml" rel = "cms-config-url">
+			<script src = "{{- (resources.GetMatch `/js/netlify-identity-widget-v1.9.1.js`).RelPermalink -}}" defer></script>
+			<script src = "{{- (resources.GetMatch `/js/netlify-cms-v2.10.76.js`).RelPermalink -}}" defer></script>
+		{{- else -}}
+			{{- if .IsHome -}}
+				<script src = "{{- (resources.GetMatch `/js/netlify-identity-widget-v1.9.1.js`).RelPermalink -}}" defer></script>
+				<script type = "application/ld+json">
+					{
+						"@context": "https://schema.org/",
+						"@type": "WebSite",
+						"name": "Broken Hearts",
+						"url": {{- .Site.BaseURL -}},
+						"potentialAction": {
+							"@type": "SearchAction",
+							"target": {{- printf "%ssearch/?q={search_term_string}" .Site.BaseURL -}},
+							"query-input": "required name=search_term_string"
+						}
+					}
+				</script>
+			{{- end -}}
+			{{- if and .IsPage (eq .Section "blog") -}}
+				<link href = "{{- (resources.GetMatch `/css/gitalk-v1.7.0.css`).RelPermalink -}}" rel = "stylesheet">
+				<script src = "{{- (resources.GetMatch `/js/gitalk-v1.7.0.js`).RelPermalink -}}" defer></script>
+				<script type = "application/ld+json">
+					{
+						"@context": "https://schema.org/",
+						"@graph":
+						[
+							{
+								"@type": "WebSite",
+								"name": "Broken Hearts",
+								"url": {{- .Site.BaseURL -}},
+								"potentialAction": {
+									"@type": "SearchAction",
+									"target": {{- printf "%ssearch/?q={search_term_string}" .Site.BaseURL -}},
+									"query-input": "required name=search_term_string"
+								}
+							},
+							{
+								"@type": "BlogPosting",
+								"mainEntityOfPage": {
+									"@type": "WebPage",
+									"@id": {{- .Permalink -}}
+								},
+								"headline": "{{- .Params.Title -}}",
+								"description": "{{- .Params.Description -}}",
+								"image": {{- printf "%sassets/icon.jpg" .Permalink -}},  
+								"author": {
+									"@type": "Person",
+									"name": "Ananya Mangwani"
+								},
+								"datePublished": "{{- .Params.Date.Format "2006-01-02" -}}"
+							},
+							{
+								"@type": "BreadcrumbList", 
+								"itemListElement": [{
+									"@type": "ListItem", 
+									"position": 1, 
+									"name": "Broken Hearts",
+									"item": {{- .Site.BaseURL -}}  
+								},{
+									"@type": "ListItem", 
+									"position": 2, 
+									"name": "{{- .Params.Title -}}",
+									"item": {{- .Permalink -}}  
+								}]
+							}	
+						]	
+					}
+				</script>
+			{{- end -}}
+			{{- if eq .Params.Layout "search" -}}
+				<script src = "{{- (resources.GetMatch `/js/lunr-v2.3.9.js`).RelPermalink -}}" defer></script>
+			{{- end -}}
+			<link href = "{{- (resources.GetMatch `/css/uikit-v3.5.17.css`).RelPermalink -}}" rel = "stylesheet">
+			<script src = "{{- (resources.GetMatch `/js/uikit-v3.5.17.js`).RelPermalink -}}" defer></script>
+			<link href = "{{- (resources.GetMatch `/css/styles.css` | minify).RelPermalink -}}" rel = "stylesheet">
+			<script src = "{{- (resources.GetMatch `/js/scripts.js`| minify).RelPermalink -}}" defer></script>
+			{{- if or (eq .Params.Layout "about") (eq .Params.Layout "search") -}}
+				<script type = "application/ld+json">
+					{
+						"@context": "https://schema.org/",
+						"@graph":
+						[
+							{
+								"@type": "WebSite",
+								"name": "Broken Hearts",
+								"url": {{- .Site.BaseURL -}},
+								"potentialAction": {
+									"@type": "SearchAction",
+									"target": {{- printf "%ssearch/?q={search_term_string}" .Site.BaseURL -}},
+									"query-input": "required name=search_term_string"
+								}
+							},
+							{
+								"@type": "BreadcrumbList", 
+								"itemListElement": [{
+									"@type": "ListItem", 
+									"position": 1, 
+									"name": "Broken Hearts",
+									"item": {{- .Site.BaseURL -}}  
+								},{
+									"@type": "ListItem", 
+									"position": 2, 
+									"name": "{{- .Params.Title -}}",
+									"item": {{- .Permalink -}}  
+								}]
+							}
+						]	
+					}
+				</script>
+			{{- end -}}
+		{{- end -}}
+		<link rel = "manifest" href = "/site.webmanifest">
+		<link rel = "icon" type = "image/x-icon" sizes = "32x32" href = "/favicon.ico">
+		<link rel = "mask-icon" href = "/images/safari-pinned-tab.svg" color = "#212121">
+		<link rel = "apple-touch-icon" sizes = "180x180" href = "/images/apple-touch-icon.png">
+		<link rel = "icon" type = "image/png" sizes = "32x32" href = "/images/favicon-32x32.png">
+	</head>
+	<body>
+		{{- if eq .Layout "admin" -}}
+			{{- block "admin" . -}}
+			{{- end -}}
+		{{- else -}}
+			<nav class = "uk-navbar-container" id = "top" uk-navbar = "mode: click">
+				<div class = "uk-navbar-left">
+					<ul class = "uk-navbar-nav">
+						<li>
+							<a href = "/" class = "uk-padding-remove uk-margin-small-left site-title">
+								<h3 class = "uk-margin-remove">
+									Broken Hearts
+								</h3>
+							</a>
+						</li>
+					</ul>
+					<a class = "uk-navbar-item uk-logo uk-padding-remove" href = "/">
+						<img width = "50" height = "50" alt = "Logo" src = "/images/logo.png">
+					</a>
+				</div>
+				<div class = "uk-navbar-right">
+					<ul class = "uk-navbar-nav">
+						<li>
+							<a href = "/about/">
+								<h4 class = "uk-margin-remove">
+									About
+								</h4>
+							</a>
+						</li>
+						<li>
+							<a href = "#" class = "social-a">
+								<span>
+									<svg viewBox = "0 0 20 20" xmlns = "http://www.w3.org/2000/svg" width = "20" height = "20" class = "icon">
+										<path d = "m16.6 12.7c-1.2 0-2.3.6-2.9 1.6l-7-3.3c.1-.3.1-.6.1-.9s-.1-.6-.1-.9l7.1-3.4c.6.9 1.6 1.4 2.8 1.4 1.9 0 3.4-1.5 3.4-3.4s-1.5-3.4-3.4-3.4-3.4 1.5-3.4 3.4c0 .3 0 .5.1.8l-7.2 3.5c-.6-.9-1.6-1.4-2.7-1.4-1.9 0-3.4 1.5-3.4 3.4s1.5 3.4 3.4 3.4c1.1 0 2.1-.5 2.7-1.4l7.1 3.3c0 .2-.1.4-.1.6 0 1.9 1.5 3.4 3.4 3.4s3.4-1.5 3.4-3.4-1.4-3.3-3.3-3.3zm0-10.9c1.2 0 2.1.9 2.1 2.1 0 1.1-1 2.1-2.1 2.1s-2.1-1-2.1-2.1c0-1.2.9-2.1 2.1-2.1zm-13.2 10.4c-1.2 0-2.1-.9-2.1-2.1s1-2.1 2.1-2.1 2.1 1 2.1 2.1-.9 2.1-2.1 2.1zm13.2 6c-1.2 0-2.1-.9-2.1-2.1s.9-2.1 2.1-2.1 2.1.9 2.1 2.1-1 2.1-2.1 2.1z"/>
+									</svg>
+								</span>
+							</a>
+							<div class = "uk-navbar-dropdown uk-padding-small">
+								<ul class = "uk-nav uk-navbar-dropdown-nav">
+									<li>
+										<a href = "https://www.facebook.com/ananya.mangwani.1/" target = "_blank" rel = "nofollow noopener noreferrer">
+											<span class = "uk-margin-small-right">
+												<svg viewBox = "0 0 20 20" xmlns = "http://www.w3.org/2000/svg" width = "20" height = "20" class = "icon">
+													<path d = "m10 0c-5.5 0-10 4.5-10 10.1 0 5 3.7 9.2 8.4 9.9v-7h-2.5v-2.9h2.5v-2.3c0-2.5 1.5-3.8 3.8-3.8 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6v1.9h2.8l-.4 2.8h-2.3v7c4.9-.8 8.5-5 8.4-9.9 0-5.6-4.5-10.1-10-10.1z"/>
+												</svg>
+											</span>
+											<span>
+												Facebook
+											</span>
+										</a>
+									</li>
+									<li>
+										<a href = "https://www.instagram.com/mangwaniananya/" target = "_blank" rel = "nofollow noopener noreferrer">
+											<span class = "uk-margin-small-right">
+												<svg viewBox = "0 0 20 20" xmlns = "http://www.w3.org/2000/svg" width = "20" height = "20" class = "icon">
+													<path d = "m5.8 0h8.4c3.2 0 5.8 2.6 5.8 5.8v8.4c0 3.2-2.6 5.8-5.8 5.8h-8.4c-3.2 0-5.8-2.6-5.8-5.8v-8.4c0-3.2 2.6-5.8 5.8-5.8m-.2 2c-2 0-3.6 1.6-3.6 3.6v8.8c0 2 1.6 3.6 3.6 3.6h8.8c2 0 3.6-1.6 3.6-3.6v-8.8c0-2-1.6-3.6-3.6-3.6zm9.6 1.5c.7 0 1.2.6 1.2 1.2s-.5 1.3-1.2 1.3-1.2-.6-1.2-1.2.6-1.3 1.2-1.3m-5.2 1.5c2.8 0 5 2.2 5 5s-2.2 5-5 5-5-2.2-5-5 2.2-5 5-5m0 2c-1.7 0-3 1.3-3 3s1.3 3 3 3 3-1.3 3-3-1.3-3-3-3z"/>
+												</svg>
+											</span>
+											<span>
+												Instagram
+											</span>
+										</a>
+									</li>
+									<li>
+										<a href = "https://www.twitter.com/ananya_mangwani/" target = "_blank" rel = "nofollow noopener noreferrer">
+											<span class = "uk-margin-small-right">
+												<svg viewBox = "0 0 20 20" xmlns = "http://www.w3.org/2000/svg" width = "20" height = "20" class = "icon">
+													<path d = "m20 3.8c-.7.3-1.5.6-2.4.7.8-.5 1.5-1.3 1.8-2.3-.8.5-1.7.8-2.6 1-.8-.8-1.8-1.3-3-1.3-2.2 0-4.1 1.8-4.1 4.1 0 .3 0 .6.1.9-3.4-.2-6.4-1.8-8.4-4.3-.4.6-.6 1.3-.6 2.1 0 1.4.7 2.7 1.8 3.4-.6 0-1.2-.2-1.8-.5 0 2 1.4 3.7 3.3 4-.3.1-.7.1-1.1.1-.3 0-.5 0-.8-.1.5 1.6 2 2.8 3.8 2.8-1.4 1.1-3.2 1.8-5.1 1.8-.3 0-.6 0-1-.1 1.8 1.2 4 1.8 6.3 1.8 7.5 0 11.7-6.3 11.7-11.7 0-.2 0-.4 0-.5.9-.4 1.5-1.1 2.1-1.9z"/>
+												</svg>
+											</span>
+											<span>
+												Twitter
+											</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<a href = "#" class = "uk-padding-remove uk-margin-small-left uk-margin-small-right">
+								<span>
+									<svg viewBox = "0 0 20 20" xmlns = "http://www.w3.org/2000/svg" width = "20" height = "20" class = "icon">
+										<path d = "M10 0c1.2 0 2.2 1 2.2 2.2s-1 2.2-2.2 2.2-2.2-1-2.2-2.2S8.8 0 10 0zm0 7.8c1.2 0 2.2 1 2.2 2.2s-1 2.2-2.2 2.2-2.2-1-2.2-2.2 1-2.2 2.2-2.2zm0 7.8c1.2 0 2.2 1 2.2 2.2 0 1.2-1 2.2-2.2 2.2s-2.2-1-2.2-2.2c0-1.2 1-2.2 2.2-2.2z"/>
+									</svg>
+								</span>
+							</a>
+							<div class = "uk-navbar-dropdown uk-padding-small">
+								<ul class = "uk-nav uk-navbar-dropdown-nav">
+									<li>
+										<a href = "/index.xml" target = "_blank" rel = "nofollow noopener noreferrer">
+											<span class = "uk-margin-small-right">
+												<svg viewBox = "0 0 20 20" xmlns = "http://www.w3.org/2000/svg" width = "20" height = "20" class = "icon">
+													<path d = "m2.2 15.5c1.2 0 2.2 1 2.2 2.2s-1 2.2-2.2 2.2-2.2-.9-2.2-2.2c0-1.2 1-2.2 2.2-2.2zm11 3.2c0-6.5-5.4-11.9-11.9-11.9-.4 0-.7 0-1.1 0l.1 1.3h1c5.9 0 10.6 4.7 10.6 10.6 0 .4 0 .7-.1 1l1.3.1c.1-.4.1-.7.1-1.1zm6.8 0c0-10.3-8.4-18.7-18.7-18.7-.4 0-.7 0-1 0v1.3h1c9.6 0 17.4 7.8 17.4 17.3v1.1l1.3.1c0-.4 0-.7 0-1.1z"/>
+												</svg>
+											</span>
+											<span>
+												RSS Feed
+											</span>
+										</a>
+									</li>
+									<li>
+										<a href = "/search/">
+											<span class = "uk-margin-small-right">
+												<svg viewBox = "0 0 20 20" xmlns = "http://www.w3.org/2000/svg" width = "20" height = "20" class = "icon">
+													<path d = "M20 19.1l-4.3-4.3c1.4-1.6 2.2-3.6 2.2-5.8 0-4.9-4-8.9-8.9-8.9S0 4 0 8.9s4 8.9 8.9 8.9c2.2 0 4.3-.8 5.8-2.2l4.3 4.3 1-.8zM8.9 16.5c-4.2 0-7.6-3.4-7.6-7.6s3.4-7.6 7.6-7.6 7.6 3.4 7.6 7.6-3.4 7.6-7.6 7.6z"/>
+												</svg>
+											</span>
+											<span>
+												Search
+											</span>
+										</a>
+									</li>
+									<li>
+										<a href = "#" class = "theme-toggle">
+											<span class = "uk-margin-small-right">
+												<svg viewBox = "0 0 20 20" xmlns = "http://www.w3.org/2000/svg" width = "20" height = "20" class = "icon">
+													<path d = "M10.2.8L8 3 6.8 1.8l-.8.8 1.2 1.2L0 11.1l8.1 8.1L18.3 8.9 10.2.8zm-8.5 10L8 4.5l3.3 3.3.8-.8-3.3-3.3 1.5-1.5L17 8.9l-2 1.9H1.7zM20 15.2c0 .9-.8 1.6-1.5 1.6s-1.5-.7-1.5-1.6c0-1.3 1.5-3.4 1.5-3.4s1.5 2.1 1.5 3.4z"/>
+												</svg>
+											</span>
+											<span>
+												Toggle theme
+											</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</nav>
+			<div class = "uk-margin-auto main-content">
+				{{- block "main" . -}}
+				{{- end -}}
+			</div>
+			<footer class = "uk-margin-auto">
+				<p class = "uk-text-center uk-margin-remove">
+					<span>
+						&copy;
+					</span>
+					<span>
+						{{ now.Year }} Ananya Mangwani
+					</span>
+				</p>
+			</footer>
+			<a href = "#top" class = "scroll-button" uk-tooltip = "title: Scroll to top; pos: left" uk-scroll>
+				<svg viewBox = "0 0 20 20" xmlns = "http://www.w3.org/2000/svg" width = "20" height = "20" class = "icon">
+					<path d = "M18.9 15.6L10 6.7l-8.9 8.9L0 14.4l10-10 10 10z"/>
+				</svg>
+			</a>
+		{{- end -}}
+		<script>
+			if ('serviceWorker' in navigator) {
+				window.addEventListener('load', function() {
+					navigator.serviceWorker.register({{- (resources.GetMatch `/js/sw.js` | minify).RelPermalink -}}, {scope: '/'})
+				})
+			}
+		</script>
+	</body>
+</html>

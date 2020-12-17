@@ -1,0 +1,30 @@
+{{- (printf "<?xml version = \"1.0\" encoding=\"UTF-8\"?>") | safeHTML -}}
+<rss version = "2.0">
+	<channel>
+		<title>
+			Broken Hearts
+		</title>
+		<link>
+			{{- .Site.BaseURL -}}index.xml
+		</link>
+		<description>
+			RSS feed of Broken Hearts
+		</description>
+		{{- range where .Site.RegularPages "Section" "blog" -}}
+			<item>
+				<title>
+					{{- .Params.Title -}}
+				</title>
+				<link>
+					{{- .Permalink -}}
+				</link>
+				<description>
+					{{- .Params.Description -}}
+				</description>
+				<pubDate>
+					{{- .Params.Date.Format "Mon, 2 Jan 2006" -}}
+				</pubDate>
+			</item>
+		{{- end -}}
+	</channel>
+</rss>

@@ -1,0 +1,21 @@
+[build]
+	[build.processing]
+		skip_processing = true
+	base = "/"
+	command = "hugo"
+	publish = "public"
+	context = "production"
+	[context.production.environment]
+		HUGO_VERSION = "0.79.0"
+		HUGO_ENV = "production"
+
+[[headers]]
+	for = "/*"
+	[headers.values]
+		Service-Worker-Allowed = "/"
+		Access-Control-Allow-Origin = "*"
+
+[[redirects]]
+	from = "/*"
+	to = "/404/"
+	status = 404

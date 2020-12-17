@@ -1,0 +1,65 @@
+{{- (printf "<?xml version = \"1.0\" encoding=\"UTF-8\"?>") | safeHTML -}}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	{{- $paginator := .Paginate (where .Site.RegularPages "Section" "blog") -}}
+	<url>
+		<loc>
+			{{- .Site.BaseURL -}}
+		</loc>
+		<changefreq>
+			weeky
+		</changefreq>
+		<priority>
+			1
+		</priority>
+	</url>
+	{{- if gt $paginator.TotalPages 1 -}}
+		{{- range $i := (seq 2 $paginator.TotalPages) -}}
+			<url>
+				<loc>
+					{{- $.Site.BaseURL -}}page/{{- $i -}}/
+				</loc>
+				<changefreq>
+					weeky
+				</changefreq>
+				<priority>
+					0.8
+				</priority>
+			</url>
+		{{- end -}}
+	{{- end -}}
+	{{- range where .Site.RegularPages "Section" "blog" -}}
+		<url>
+			<loc>
+				{{- .Permalink -}}
+			</loc>
+			<changefreq>
+				monthly
+			</changefreq>
+			<priority>
+				0.5
+			</priority>
+		</url>
+	{{- end -}}
+	<url>
+		<loc>
+			{{- .Site.BaseURL -}}about/
+		</loc>
+		<changefreq>
+			monthly
+		</changefreq>
+		<priority>
+			0.3
+		</priority>
+	</url>
+	<url>
+		<loc>
+			{{- .Site.BaseURL -}}search/
+		</loc>
+		<changefreq>
+			monthly
+		</changefreq>
+		<priority>
+			0.3
+		</priority>
+	</url>
+</urlset>
