@@ -26,6 +26,66 @@
 				</div>
 			{{- end -}}
 		</div>
-		{{- partial "pagination" . -}}
+		{{- if gt $paginator.TotalPages 1 -}}
+			<div class = "uk-flex uk-flex-wrap uk-flex-center uk-margin-top uk-margin-bottom uk-animation-fade">
+				{{- if and (ne $paginator.PageNumber 1) (ne $paginator.PageNumber 2) -}}
+					<a href = "{{- $paginator.First.URL -}}" class = "page-button first-page" uk-tooltip = "Jump to first page">
+						<svg viewBox = "0 0 20 20" xmlns = "http://www.w3.org/2000/svg" width = "20" height = "20" class = "icon">
+							<path d = "M9.6 19.6L0 10 9.6.4 11.2 2l-8 8 8 8-1.6 1.6zM20 18l-8-8 8-8L18.4.4 8.8 10l9.6 9.6L20 18z"/>
+						</svg>
+					</a>
+				{{- end -}}
+				{{- if $paginator.HasPrev -}}
+					<a href = "{{- $paginator.Prev.URL -}}" class = "page-button prev-page" uk-tooltip = "Go to page {{ sub $paginator.PageNumber 1 }}">
+						<svg viewBox = "0 0 20 20" xmlns = "http://www.w3.org/2000/svg" width = "20" height = "20" class = "icon">
+							<path d = "M14.4 20l-10-10 10-10 1.2 1.1L6.7 10l8.9 8.9z"/>
+						</svg>
+					</a>
+				{{- end -}}
+				{{- if ge (sub $paginator.PageNumber 2) 2 -}}
+					<a class = "page-button skip-page" href = "{{- ($paginator.Prev).Prev.URL -}}" uk-tooltip = "Go to page {{ sub ($paginator.PageNumber) 2 }}">
+						<span>
+							{{- sub ($paginator.PageNumber) 2 -}}
+						</span>
+					</a>
+					<a class = "uk-disabled page-button skip-page">
+						<span>
+							...
+						</span>
+					</a>
+				{{- end -}}
+				<a class = "uk-position-z-index page-button current-page" uk-tooltip = "You're here">
+					<span class = "uk-text-bold">
+						{{- $paginator.PageNumber -}}
+					</span>
+				</a>
+				{{- if le (add $paginator.PageNumber 2) (sub $paginator.TotalPages 2) -}}
+					<a class = "uk-disabled page-button skip-page">
+						<span>
+							...
+						</span>
+					</a>
+					<a class = "page-button skip-page" href = "{{- ($paginator.Next).Next.URL -}}" uk-tooltip = "Go to page {{ add ($paginator.PageNumber) 2 }}">
+						<span>
+							{{- add ($paginator.PageNumber) 2 -}}
+						</span>
+					</a>
+				{{- end -}}
+				{{- if $paginator.HasNext -}}
+					<a href = "{{- $paginator.Next.URL -}}" class = "page-button next-page" uk-tooltip = "Go to page {{ add $paginator.PageNumber 1 }}">
+						<svg viewBox = "0 0 20 20" xmlns = "http://www.w3.org/2000/svg" width = "20" height = "20" class = "icon">
+							<path d = "M5.6 20l10-10-10-10-1.2 1.1 8.9 8.9-8.9 8.9z"/>
+						</svg>
+					</a>
+				{{- end -}}
+				{{- if and (ne $paginator.PageNumber $paginator.TotalPages) (ne $paginator.PageNumber (sub $paginator.TotalPages 1)) -}}
+					<a href = "{{- $paginator.Last.URL -}}" class = "page-button last-page" uk-tooltip = "Jump to last page">
+						<svg viewBox = "0 0 20 20" xmlns = "http://www.w3.org/2000/svg" width = "20" height = "20" class = "icon">
+							<path d = "M8.8 18l8-8-8-8L10.4.4 20 10l-9.6 9.6L8.8 18zm-7.2 1.6l9.6-9.6L1.6.4 0 2l8 8-8 8 1.6 1.6z"/>
+						</svg>
+					</a>
+				{{- end -}}
+			</div>
+		{{- end -}}
 	</main>
 {{- end -}}

@@ -3,7 +3,7 @@
 	<head>
 		<script async src = "https://www.googletagmanager.com/gtag/js?id=UA-171538498-1"></script>
 		<script>
-			window.dataLayer = window.dataLayer || [];
+			window.dataLayer = window.dataLayer || []
 			function gtag() {
 				dataLayer.push(arguments)
 			}
@@ -67,7 +67,6 @@
 			<script src = "{{- (resources.GetMatch `/js/netlify-cms-v2.10.76.js`).RelPermalink -}}" defer></script>
 		{{- else -}}
 			{{- if .IsHome -}}
-				<script src = "{{- (resources.GetMatch `/js/netlify-identity-widget-v1.9.1.js`).RelPermalink -}}" defer></script>
 				<script type = "application/ld+json">
 					{
 						"@context": "https://schema.org/",
@@ -136,8 +135,8 @@
 			{{- if eq .Params.Layout "search" -}}
 				<script src = "{{- (resources.GetMatch `/js/lunr-v2.3.9.js`).RelPermalink -}}" defer></script>
 			{{- end -}}
-			<link href = "{{- (resources.GetMatch `/css/uikit-v3.5.17.css`).RelPermalink -}}" rel = "stylesheet">
-			<script src = "{{- (resources.GetMatch `/js/uikit-v3.5.17.js`).RelPermalink -}}" defer></script>
+			<link href = "{{- (resources.GetMatch `/css/uikit-v3.6.1.css`).RelPermalink -}}" rel = "stylesheet">
+			<script src = "{{- (resources.GetMatch `/js/uikit-v3.6.1.js`).RelPermalink -}}" defer></script>
 			<link href = "{{- (resources.GetMatch `/css/styles.css` | minify).RelPermalink -}}" rel = "stylesheet">
 			<script src = "{{- (resources.GetMatch `/js/scripts.js`| minify).RelPermalink -}}" defer></script>
 			{{- if or (eq .Params.Layout "about") (eq .Params.Layout "search") -}}

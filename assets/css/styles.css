@@ -121,6 +121,7 @@
 .light-theme {
 	--text: 33, 33, 33;
 	--link: 3, 155, 229;
+	--highlight: 3, 169, 244;
 	--surface: 238, 238, 238;
 	--background: 250, 250, 250;
 }
@@ -129,6 +130,10 @@
 	--text: 250, 250, 250;
 	--surface: 66, 66, 66;
 	--background: 33, 33, 33;
+	--highlight: 255, 224, 130;
+}
+::selection {
+	background: rgb(var(--highlight));
 }
 body {
 	min-height: 100vh;
@@ -142,13 +147,19 @@ blockquote {
 	padding: 15px 0 15px 15px;
 	border-left: 3px solid rgb(var(--text));
 }
+mark {
+	font-weight: 700;
+	padding: 0 2.5px;
+	color: rgb(var(--background));
+	background: rgb(var(--highlight));
+}
 footer {
 	height: 39px;
 }
 footer p span:first-child {
 	font-family: 'Arial', sans-serif;
 }
-.uk-navbar, .uk-card, .uk-button-default {
+.uk-navbar, .uk-card {
 	background: rgb(var(--surface)) !important;
 }
 .uk-navbar {
@@ -171,6 +182,7 @@ footer p span:first-child {
 	border-color: rgb(var(--text)) !important;
 }
 .uk-input {
+	transition: none;
 	color: rgb(var(--text)) !important;
 	border-color: rgb(var(--text)) !important;
 	background: rgb(var(--surface)) !important;
@@ -375,7 +387,6 @@ footer p span:first-child {
 	}
 }
 @media screen and (max-width: 640px) {
-
 	.site-title, 	.first-page, 	.last-page {
 		display: none !important;
 	}

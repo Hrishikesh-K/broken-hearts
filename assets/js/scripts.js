@@ -1,13 +1,4 @@
 window.addEventListener('DOMContentLoaded', function () {
-	if (document.querySelector('.home-grid') != null && window.netlifyIdentity) {
-		window.netlifyIdentity.on('init', user => {
-			if (!user) {
-				window.netlifyIdentity.on('login', () => {
-					document.location.href = '/admin/'
-				})
-			}
-		})
-	}
 	function checkTheme() {
 		var selectedTheme = localStorage.getItem('theme')
 		if (selectedTheme != null) {

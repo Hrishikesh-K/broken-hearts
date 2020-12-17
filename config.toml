@@ -1,4 +1,5 @@
 baseURL = "https://brokenhearts.netlify.app/"
+#disableLiveReload = true
 disableKinds = ["section", "taxonomy", "term"]
 enableRobotsTXT = true
 paginate = 6
