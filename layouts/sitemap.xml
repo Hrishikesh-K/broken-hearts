@@ -6,7 +6,7 @@
 			{{- .Site.BaseURL -}}
 		</loc>
 		<changefreq>
-			weeky
+			weekly
 		</changefreq>
 		<priority>
 			1
@@ -19,7 +19,7 @@
 					{{- $.Site.BaseURL -}}page/{{- $i -}}/
 				</loc>
 				<changefreq>
-					weeky
+					weekly
 				</changefreq>
 				<priority>
 					0.8
