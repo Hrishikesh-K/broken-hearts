@@ -4,13 +4,13 @@ self.addEventListener('install', function (event) {
 	event.waitUntil(caches.open(cacheVersion).then(function (cache) {
 		return cache.addAll([
 			'/css/gitalk-v1.7.0.css',
-			'/css/uikit-v3.6.1.css',
+			'/css/uikit-v3.6.3.css',
 			'/css/styles.min.css',
 			'/js/gitalk-v1.7.0.js',
 			'/js/lunr-v2.3.9.js',
 			'/js/netlify-cms-v2.10.76.js',
 			'/js/netlify-identity-widget-v1.9.1.js',
-			'/js/uikit-v3.6.1.js',
+			'/js/uikit-v3.6.3.js',
 			'/js/scripts.min.js',
 			'/yml/netlify-cms-config.yml',
 			'/favicon.ico',
@@ -21,7 +21,6 @@ self.addEventListener('install', function (event) {
 			'/images/android-chrome-512x512.png',
 			'/images/apple-touch-icon.png',
 			'/images/favicon-32x32.png',
-			'/images/loading.svg',
 			'/images/logo.png',
 			'/images/mstile-150x150.png',
 			'/images/safari-pinned-tab.svg',

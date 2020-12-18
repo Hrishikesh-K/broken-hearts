@@ -136,8 +136,8 @@
 			{{- if eq .Params.Layout "search" -}}
 				<script src = "{{- (resources.GetMatch `/js/lunr-v2.3.9.js`).RelPermalink -}}" defer></script>
 			{{- end -}}
-			<link href = "{{- (resources.GetMatch `/css/uikit-v3.6.1.css`).RelPermalink -}}" rel = "stylesheet">
-			<script src = "{{- (resources.GetMatch `/js/uikit-v3.6.1.js`).RelPermalink -}}" defer></script>
+			<link href = "{{- (resources.GetMatch `/css/uikit-v3.6.3.css`).RelPermalink -}}" rel = "stylesheet">
+			<script src = "{{- (resources.GetMatch `/js/uikit-v3.6.3.js`).RelPermalink -}}" defer></script>
 			<link href = "{{- (resources.GetMatch `/css/styles.css` | minify).RelPermalink -}}" rel = "stylesheet">
 			<script src = "{{- (resources.GetMatch `/js/scripts.js`| minify).RelPermalink -}}" defer></script>
 			{{- if or (eq .Params.Layout "about") (eq .Params.Layout "search") -}}

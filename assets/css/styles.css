@@ -141,7 +141,7 @@ h1, h2, h3, h4, h5, h6, p {
 	font-family: 'Google Sans', sans-serif !important;
 }
 img[data-src][src*='data:image'] {
-	background: rgba(var(--highlight), 0.5) url('/images/loading.svg') no-repeat center center;
+	background: rgba(var(--highlight), 0.5) url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' width='100px' height='100px' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='0' fill='none' stroke='%23ffe082' stroke-width='3'%3E%3Canimate attributeName='r' repeatCount='indefinite' dur='2s' values='0;50' keyTimes='0;1' keySplines='0 0.2 0.8 1' calcMode='spline' begin='-1s'%3E%3C/animate%3E%3Canimate attributeName='opacity' repeatCount='indefinite' dur='2s' values='1;0' keyTimes='0;1' keySplines='0.2 0 0.8 1' calcMode='spline' begin='-1s'%3E%3C/animate%3E%3C/circle%3E%3Ccircle cx='50' cy='50' r='0' fill='none' stroke='%2303a9f4' stroke-width='3'%3E%3Canimate attributeName='r' repeatCount='indefinite' dur='2s' values='0;50' keyTimes='0;1' keySplines='0 0.2 0.8 1' calcMode='spline'%3E%3C/animate%3E%3Canimate attributeName='opacity' repeatCount='indefinite' dur='2s' values='1;0' keyTimes='0;1' keySplines='0.2 0 0.8 1' calcMode='spline'%3E%3C/animate%3E%3C/circle%3E%3C/svg%3E") no-repeat center center;
 	background-size: 50% 50%;
 }
 blockquote {
