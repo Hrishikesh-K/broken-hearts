@@ -132,9 +132,6 @@
 	--background: 33, 33, 33;
 	--highlight: 255, 224, 130;
 }
-::selection {
-	background: rgb(var(--highlight));
-}
 body {
 	min-height: 100vh;
 	background: rgb(var(--background));
@@ -142,6 +139,10 @@ body {
 h1, h2, h3, h4, h5, h6, p {
 	color: rgb(var(--text)) !important;
 	font-family: 'Google Sans', sans-serif !important;
+}
+img[data-src][src*='data:image'] {
+	background: rgba(var(--highlight), 0.5) url('/images/loading.svg') no-repeat center center;
+	background-size: 50% 50%;
 }
 blockquote {
 	padding: 15px 0 15px 15px;
@@ -158,6 +159,13 @@ footer {
 }
 footer p span:first-child {
 	font-family: 'Arial', sans-serif;
+}
+::selection, ::-webkit-scrollbar-thumb {
+	background: rgb(var(--highlight));
+}
+::-webkit-scrollbar {
+	background: rgb(var(--surface));
+	width: 7.5px;
 }
 .uk-navbar, .uk-card {
 	background: rgb(var(--surface)) !important;
@@ -186,13 +194,6 @@ footer p span:first-child {
 	color: rgb(var(--text)) !important;
 	border-color: rgb(var(--text)) !important;
 	background: rgb(var(--surface)) !important;
-}
-[uk-img] {
-	display: block;
-	background-repeat: no-repeat;
-	background-size: 100px 100px;
-	background-position: center center;
-	background-image: url('/images/loading.svg');
 }
 .icon path {
 	fill: rgb(var(--text));

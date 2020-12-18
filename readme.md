@@ -8,7 +8,11 @@
 * [Content structure](#content-structure)
 * [Features of this code](#features-of-this-code)
 	* [UIkit-based](#uikit-based)
-	* [Responsive](#responsive)
+		* [Responsive Layout](#responsive-layout)
+		* [Icons](#icons)
+		* [Lazy load images](#lazy-load-images)
+		* [Tooltips](#tooltips)
+		* [Smooth scroll](#smooth-scroll)
 	* [Light/Dark mode](#lightdark-mode)
 	* [Pagination](#pagination)
 	* [SEO](#seo)
@@ -58,13 +62,35 @@ The code is minimally configured with the following features:
 
 ### UIkit-based
 
-The website uses UIkit as its design framework. It's one of the most complete frameworks with a huge collection of components that are very easy to configure. Check it out here: https://github.com/uikit/uikit
+The website uses UIkit as its design framework. It's one of the most complete frameworks with a huge collection of components that are very easy to configure. Check it out here: https://github.com/uikit/uikit.
 
 [Back to TOC](#table-of-contents)
 
-### Responsive
+#### Responsive Layout
 
 Thanks to UIkit for out-of-box responsiveness. Using its components, the code is set-up to use Masonry based layout to list all the posts. The code uses full-width till 1200px width at which it's capped.
+
+[Back to TOC](#table-of-contents)
+
+#### Icons
+
+The icons used on the website are taken from UIkit's icon library. However, instead of importing the entire icon library of a few icons, I have copied the SVGs, changed their outlines to paths and resized them to make them same size and then added them to the HTML.
+
+#### Lazy load images
+
+The website is also making use of UIkit's out-of-box support for lazy loading of images. Till an image is loaded, a placeholder colour and image is shown.
+
+[Back to TOC](#table-of-contents)
+
+#### Tooltips
+
+The website also uses the tooltip component in various places instead of the default `title` attribute of the HTML spec.
+
+[Back to TOC](#table-of-contents)
+
+#### Smooth scroll
+
+Another prominent component that's used is the scroll component. It enables smooth scrolling of anchors.
 
 [Back to TOC](#table-of-contents)
 

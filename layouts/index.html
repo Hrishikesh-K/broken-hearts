@@ -13,7 +13,7 @@
 								{{ .Params.Date.Format  "Jan 02, 2006" }} - Written by Ananya Mangwani
 							</p>
 							<div class = "uk-border-circle uk-margin-auto post-icon-background">
-								<img width = "150" height = "150" alt = "{{- .Params.Title -}}" src = "{{- (.Page.Resources.GetMatch `assets/icon.svg`).RelPermalink -}}">
+								<img class = "uk-border-circle" width = "150" height = "150" alt = "{{- .Params.Title -}}" data-src = "{{- .RelPermalink -}}assets/icon.svg" uk-img>
 							</div>
 							<p class = "uk-text-large">
 								{{- .Params.Description -}}
