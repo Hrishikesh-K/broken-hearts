@@ -8,7 +8,7 @@ self.addEventListener('install', function (event) {
 			'/css/styles.min.css',
 			'/js/gitalk-v1.7.0.js',
 			'/js/lunr-v2.3.9.js',
-			'/js/netlify-cms-v2.10.76.js',
+			'/js/netlify-cms-v2.10.77.js',
 			'/js/netlify-identity-widget-v1.9.1.js',
 			'/js/uikit-v3.6.3.js',
 			'/js/scripts.min.js',

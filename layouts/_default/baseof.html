@@ -44,7 +44,7 @@
 		<meta name = "title" content = "{{- .Scratch.Get `title` -}}">
 		<meta name = "apple-mobile-web-app-title" content = "Broken Hearts">
 		<meta name = "description" content = "{{- .Scratch.Get `description` -}}">
-		<meta name = "viewport" content = "user-scalable = yes, initial-scale = 1, viewport-fit = cover, width = device-width, height = device-height">
+		<meta name = "viewport" content = "user-scalable = yes, initial-scale = 1, width = device-width, height = device-height">
 		<meta name = "keywords" content = "Ananya Mangwani, Ananya, Mangwani, Broken Hearts, Broken, Hearts, Blog, Love, Friends, Troubles, Pain, Anger, Jealousy, Emotions">
 		<meta property = "og:type" content = "website">
 		<meta property = "og:locale" content = "en_IN">
@@ -65,7 +65,7 @@
 		{{- if eq .Params.Layout "admin" -}}
 			<link href = "{{- (resources.GetMatch `/yml/netlify-cms-config.yml`).RelPermalink -}}" type = "text/yaml" rel = "cms-config-url">
 			<script src = "{{- (resources.GetMatch `/js/netlify-identity-widget-v1.9.1.js`).RelPermalink -}}" defer></script>
-			<script src = "{{- (resources.GetMatch `/js/netlify-cms-v2.10.76.js`).RelPermalink -}}" defer></script>
+			<script src = "{{- (resources.GetMatch `/js/netlify-cms-v2.10.77.js`).RelPermalink -}}" defer></script>
 		{{- else -}}
 			{{- if .IsHome -}}
 				<script type = "application/ld+json">
