@@ -1,6 +1,6 @@
 ---
 title: "A comma not full stop"
-date: 2021-05-01
+date: 2021-05-10
 description: "For a long time I was envious of people who didn't care or did not get overwhelmed with emotions..."
 ---
 
