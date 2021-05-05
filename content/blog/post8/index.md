@@ -1,8 +1,10 @@
 ---
 title: "A comma not full stop"
 date: 2021-05-05
-description: "For a long time I was envious of people who didn't care or did not get overwhelmed with emotions..."
+description: "When I had all the answers, the question changed..."
 ---
+
+> When I had all the answers, the question changed - Paulo Coehlo.
 
 For a long time I was envious of people who didn't care or did not get overwhelmed with emotions and had a certain detachment from things, people and life. Certain events transpired in a really short amount of time that pushed me over to the extent of feeling numb and it was a classic "grass is greener on the other side" scenario.
 
@@ -17,6 +19,8 @@ The rare need for feeling deserving of someone's attention, validation or suppor
 This isn't all a big cry for help but I'm getting to the good part. Stop calling "emotional avoidance" an optimistic mind. Stop telling yourself you don't need people. Believe me, I hate saying this but you need people. We all do. I don’t let myself be loved or held,supported and that's why you might pity me reading this. Yeah I was never taught to ask for help, allowed to be lesser but I am learning. I trust everyday, decide not to quit everyday, do kind gestures everyday and get hurt everyday. Bandaged and bruised (get the joke?) I am still here and I surprise myself everyday.
 
 My innate ability to trust someone has been damaged beyond repair by people who let me down or leave, but you gotta start somewhere. You’ll be knocked down but dust yourself off and trust again. Get your heartbroken again, lose your friends again because all of it is leading to something extraordinarily amazing. At least that is what they all say.
+
+Even with everything going wrong, you gotta have faith. Shout out to those who stick with me. I might not know but they try and that's all that matters. Your acts of kindness saves lives. You know who you are so thank you.
 
 And for my next unnecessary oversharing we shall cover how I cry my broken hearted self to sleep but exaggerating my position in other people’s lives. You don't wanna miss it.
 
