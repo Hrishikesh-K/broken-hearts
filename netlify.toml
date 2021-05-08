@@ -16,6 +16,12 @@
 		Access-Control-Allow-Origin = "*"
 
 [[redirects]]
+	from = "https://brokenhearts.netlify.app/*"
+	to = "https://www.brokenhearts.ml/:splat"
+	status = 301
+	force = true
+
+[[redirects]]
 	from = "/*"
 	to = "/404/"
 	status = 404
