@@ -302,7 +302,7 @@ footer p span:first-child {
 	top: 0.75em;
 	background: rgb(var(--text));
 }
-.gt-copyright, .gt-container .gt-header-controls-tip, .gt-container .gt-comment-like {
+.gt-copyright, .gt-container .gt-header-controls-tip, .gt-container .gt-comment-like, .gt-error {
 	display: none;
 }
 .gt-container .gt-header-textarea {
