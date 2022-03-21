@@ -35,3 +35,5 @@ I shall cling to every word of remark, wisdom, and encouragement you sent my way
 You'll always be the teacher who taught me how to write, think on set, storytelling and at the end of the day,\
 You'll forever be in my memories in my work and never stop being keen\
 From the wish book to the black hole, we never know when its a wrap on our scene
+
+![Mr. Bennett.](assets/img1.jpg)
