@@ -1,19 +1,13 @@
 [build]
-	[build.processing]
-		skip_processing = true
 	base = "/"
 	command = "hugo"
 	publish = "public"
-	context = "production"
 	[context.production.environment]
-		HUGO_VERSION = "0.83.0"
-		HUGO_ENV = "production"
-
+		HUGO_VERSION = "0.95.0"
 [[headers]]
 	for = "/*"
 	[headers.values]
 		Service-Worker-Allowed = "/"
-
 [[redirects]]
 	from = "/*"
 	to = "/404/"

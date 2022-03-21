@@ -334,7 +334,7 @@
 		<script>
 			if ('serviceWorker' in navigator) {
 				window.addEventListener('load', function() {
-					navigator.serviceWorker.register({{- (resources.GetMatch `/js/sw.js` | minify).RelPermalink -}}, {scope: '/'})
+					//navigator.serviceWorker.register({{- (resources.GetMatch `/js/sw.js` | minify).RelPermalink -}}, {scope: '/'})
 				})
 			}
 		</script>
