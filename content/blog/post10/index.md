@@ -24,7 +24,7 @@ I write with tears in a weak attempt to grieve
 Never again will I see the quirky texts on your t-shirts\
 Your voice resonating through the walls so loud\
 We dedicate our first short film to you, and only hope in the future\
-The many more to come to make you beam with proud
+The many more to come, make you beam with proud
 
 I entered this country with doubts, fears, and the mood to survive\
 You brought me out of my shell and taught me how to thrive\
