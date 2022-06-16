@@ -64,8 +64,8 @@
 		<title>{{- .Scratch.Get "title" -}}</title>
 		{{- if eq .Params.Layout "admin" -}}
 			<link href = "{{- (resources.GetMatch `/yml/netlify-cms-config.yml`).RelPermalink -}}" type = "text/yaml" rel = "cms-config-url">
-			<script src = "{{- (resources.GetMatch `/js/netlify-identity-widget-v1.9.1.js`).RelPermalink -}}" defer></script>
-			<script src = "{{- (resources.GetMatch `/js/netlify-cms-v2.10.185.js`).RelPermalink -}}" defer></script>
+			<script src = "{{- (resources.GetMatch `/js/netlify-identity-widget-v1.9.2.js`).RelPermalink -}}" defer></script>
+			<script src = "{{- (resources.GetMatch `/js/netlify-cms-v2.10.192.js`).RelPermalink -}}" defer></script>
 		{{- else -}}
 			{{- if .IsHome -}}
 				<script type = "application/ld+json">
@@ -136,8 +136,8 @@
 			{{- if eq .Params.Layout "search" -}}
 				<script src = "{{- (resources.GetMatch `/js/lunr-v2.3.9.js`).RelPermalink -}}" defer></script>
 			{{- end -}}
-			<link href = "{{- (resources.GetMatch `/css/uikit-v3.10.1.css`).RelPermalink -}}" rel = "stylesheet">
-			<script src = "{{- (resources.GetMatch `/js/uikit-v3.10.1.js`).RelPermalink -}}" defer></script>
+			<link href = "{{- (resources.GetMatch `/css/uikit-v3.14.3.css`).RelPermalink -}}" rel = "stylesheet">
+			<script src = "{{- (resources.GetMatch `/js/uikit-v3.14.3.js`).RelPermalink -}}" defer></script>
 			<link href = "{{- (resources.GetMatch `/css/styles.css` | minify).RelPermalink -}}" rel = "stylesheet">
 			<script src = "{{- (resources.GetMatch `/js/scripts.js`| minify).RelPermalink -}}" defer></script>
 			{{- if or (eq .Params.Layout "about") (eq .Params.Layout "search") -}}
