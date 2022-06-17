@@ -2,6 +2,7 @@
 title: "Thank you, Teacher"
 date: 2022-03-21
 description: "I am graduating soon and cannot help myself looking back with nostalgia and a little bit of sadness...."
+draft: true
 ---
 
 I am graduating soon and cannot help myself looking back with nostalgia and a little bit of sadness.
