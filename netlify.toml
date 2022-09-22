@@ -3,7 +3,7 @@
 	command = "hugo"
 	publish = "public"
 	[context.production.environment]
-		HUGO_VERSION = "0.100.2"
+		HUGO_VERSION = "0.103.1"
 [[headers]]
 	for = "/*"
 	[headers.values]

@@ -4,13 +4,13 @@ self.addEventListener('install', function (event) {
 	event.waitUntil(caches.open(cacheVersion).then(function (cache) {
 		return cache.addAll([
 			'/css/gitalk-v1.7.2.css',
-			'/css/uikit-v3.14.3.css',
+			'/css/uikit-v3.15.10.css',
 			'/css/styles.min.css',
 			'/js/gitalk-v1.7.2.js',
 			'/js/lunr-v2.3.9.js',
 			'/js/netlify-cms-v2.10.192.js',
 			'/js/netlify-identity-widget-v1.9.2.js',
-			'/js/uikit-v3.14.3.js',
+			'/js/uikit-v3.15.10.js',
 			'/js/scripts.min.js',
 			'/yml/netlify-cms-config.yml',
 			'/favicon.ico',
